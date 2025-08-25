@@ -1,0 +1,298 @@
+/* Importando uma fonte para um visual mais moderno */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Variáveis de cor para fácil customização */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #f8f9fa;
+    --text-color: #333;
+    --background-color: #e9ecef;
+    --container-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.logo img {
+    height: 75px;
+    vertical-align: middle;
+    border-radius: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e9ecef;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Estilo dos containers */
+.search-container, #results-container, #ofertas, #carousel-container, #institucional {
+    background-color: var(--container-bg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+h2, h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Estilo do formulário */
+#search-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilo do botão */
+#search-form button, .btn {
+    grid-column: 1 / -1; /* Ocupa toda a largura da grade */
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#search-form button:hover, .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo da lista de resultados */
+.flight-item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flight-price {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Estilos das Ofertas */
+.offers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.offer-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+}
+
+.offer-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.offer-details {
+    padding: 1rem;
+}
+
+.offer-details h3 {
+    margin-top: 0;
+}
+
+/* Estilos do Carrossel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    color: #6c757d;
+    margin-top: 2rem;
+}
+
+/* Estilos do Menu Flutuante */
+.floating-menu {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 2px 8px var(--shadow-color);
+    z-index: 1000;
+    width: 60px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.floating-menu:hover {
+    width: 220px;
+}
+
+.floating-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.floating-menu li a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+
+.floating-menu li a:hover {
+    background-color: #0056b3;
+}
+
+.floating-menu .menu-text {
+    margin-left: 1rem;
+    font-size: 1rem;
+    display: none;
+}
+
+.floating-menu:hover .menu-text {
+    display: inline;
+}

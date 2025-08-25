@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajar Agora - Passagens Aéreas</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="floating-menu">
+        <ul>
+            <li><a href="index.html" title="Home">🏠<span class="menu-text">Home</span></a></li>
+            <li><a href="passagens.html" title="Passagens">✈️<span class="menu-text">Passagens</span></a></li>
+            <li><a href="hoteis.html" title="Hoteis">🏨<span class="menu-text">Hoteis</span></a></li>
+            <li><a href="carros.html" title="Aluguel de Carros">🚗<span class="menu-text">Aluguel de Carros</span></a></li>
+            <li><a href="institucional.html" title="Institucional">🏢<span class="menu-text">Institucional</span></a></li>
+        </ul>
+    </div>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Viajar Agora Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="passagens.html">Passagens</a></li>
+                <li><a href="hoteis.html">Hoteis</a></li>
+                <li><a href="carros.html">Aluguel de Carros</a></li>
+                <li><a href="institucional.html">Institucional</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="ofertas">
+            <h2>Ofertas Imperdíveis</h2>
+            <div class="offers-container">
+                <div class="offer-card">
+                    <img src="copacabana.jpg" alt="Rio de Janeiro">
+                    <div class="offer-details">
+                        <h3>Rio de Janeiro</h3>
+                        <p>Passagens a partir de R$ 250</p>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img src="salvador.jpg" alt="Salvador">
+                    <div class="offer-details">
+                        <h3>Salvador</h3>
+                        <p>Passagens a partir de R$ 300</p>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <img src="fortaleza.jpg" alt="Fortaleza">
+                    <div class="offer-details">
+                        <h3>Fortaleza</h3>
+                        <p>Passagens a partir de R$ 350</p>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-container">
+            <h2>Encontre o seu próximo voo</h2>
+            <form id="search-form">
+                <div class="form-group">
+                    <label for="origin">Origem</label>
+                    <input type="text" id="origin" name="origin" placeholder="Cidade de partida" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destino</label>
+                    <input type="text" id="destination" name="destination" placeholder="Cidade de chegada" required>
+                </div>
+                <div class="form-group">
+                    <label for="departure-date">Data de Ida</label>
+                    <input type="date" id="departure-date" name="departure-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="return-date">Data de Volta (opcional)</label>
+                    <input type="date" id="return-date" name="return-date">
+                </div>
+                <div class="form-group">
+                    <label for="passengers">Passageiros</label>
+                    <input type="number" id="passengers" name="passengers" min="1" value="1" required>
+                </div>
+                <button type="submit">Buscar Voos</button>
+            </form>
+        </section>
+
+        <section id="results-container">
+            <h3>Voos disponíveis</h3>
+            <div id="flights-list">
+                <p>Preencha o formulário acima para encontrar as melhores ofertas.</p>
+            </div>
+        </section>
+
+        <section id="carousel-container">
+            <h2>Destinos Incríveis</h2>
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="jericoacoara.jpg" alt="Praia de Jericoacoara">
+                        <div class="carousel-caption">
+                            <h3>Jericoacoara</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="noronha2.jpg" alt="Praia de Fernando de Noronha">
+                        <div class="carousel-caption">
+                            <h3>Fernando de Noronha</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="porto de galinhas.jpg" alt="Praia de Porto de Galinhas">
+                        <div class="carousel-caption">
+                            <h3>Porto de Galinhas</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="maragogi.jpg" alt="Praia de Maragogi">
+                        <div class="carousel-caption">
+                            <h3>Maragogi</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="arraial.jpg" alt="Praia de Arraial do Cabo">
+                        <div class="carousel-caption">
+                            <h3>Arraial do Cabo</h3>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</a>
+                <a class="carousel-control next" onclick="moveSlide(1)">&#10095;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Viajar Agora. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
