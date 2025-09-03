@@ -80,6 +80,7 @@
 // });
 const url = "http://192.168.15.2:3030/cards"
 
+
 async function getCard() {
 
     let response = await fetch(url)
