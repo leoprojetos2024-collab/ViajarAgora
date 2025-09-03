@@ -110,12 +110,12 @@ async function getCard() {
 
                 container.innerHTML += template               
 
+    
+                
 
 
 
-               
-
-
+                
 
 
     }
