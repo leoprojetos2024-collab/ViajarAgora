@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - Viajar Agora</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html"><img src="../img/logo.png" alt="Viajar Agora Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./passagens.html">Passagens</a></li>
+                <li><a href="./hoteis.html">Hoteis</a></li>
+                <li><a href="./carros.html">Aluguel de Carros</a></li>
+                <li><a href="./institucional.html">Institucional</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./carrinho.html" class="cart-button"><img src="../img/carrinho2.png" alt="Carrinho de Compras" style="height: 24px; vertical-align: middle;"><span class="cart-notification">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="carrinho-container">
+            <h2>Meu Carrinho</h2>
+            <div id="cart-items">
+                <!-- Itens do carrinho serão inseridos aqui pelo JavaScript -->
+            </div>
+            <div id="cart-total">
+                <h2>Total: <span id="total-price">R$ 0,00</span></h2>
+            </div>
+            <div id="cart-actions">
+                <button class="btn" id="checkout-button">Finalizar Compra</button>
+                <button class="btn" id="clear-cart-button">Limpar Carrinho</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Viajar Agora. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../carrinho.js"></script>
+</body>
+</html>
