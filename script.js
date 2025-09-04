@@ -82,14 +82,15 @@ const url = "http://192.168.15.2:3030/cards"
 async function getCard() {
     let response = await fetch(url)
     let data = await response.json()
-
+    
+    let container = document.querySelector("#offers-container")
     for (let i = 0; i < data.length; i++) {
         let card = data[i]
 
-
-        let container = document.querySelector("#offers-container")
-
-        let template = `<div class="offer-card">
+let html = ""
+for (let i = 0; i < data.length; i++) {
+    let card = data[i]
+    html += `<div class="offer-card">
                     <img src="${card.img_url}" alt="destino">
                     <div class="offer-details">
                         <h3>${card.destino} </h3>
@@ -102,10 +103,14 @@ async function getCard() {
                         <a href="pages/rio.html" class="btn">Detalhes</a>
                     </div>
                 </div>`
+}
+container.innerHTML = html
+
+        // let template = ``
 
 
 
-                container.innerHTML += template               
+        //         container.innerHTML += template               
 
     
                 
