@@ -78,39 +78,76 @@
 //     // Exibe o primeiro slide inicialmente
 //     showSlide(currentSlide);
 // });
-const url = "http://192.168.15.2:3030/cards"
-async function getCard() {
-    let response = await fetch(url)
-    let data = await response.json()
+// const url = "http://192.168.15.2:3030/cards"
+// async function getCard() {
+//     let response = await fetch(url)
+//     let data = await response.json()
     
-    let container = document.querySelector("#offers-container")
-    for (let i = 0; i < data.length; i++) {
-        let card = data[i]
+//     let container = document.querySelector("#offers-container")
+//     for (let i = 0; i < data.length; i++) {
+//         let card = data[i]
 
-let html = ""
-for (let i = 0; i < data.length; i++) {
-    let card = data[i]
-    html += `<div class="offer-card">
-                    <img src="${card.img_url}" alt="destino">
-                    <div class="offer-details">
-                        <h3>${card.destino} </h3>
-                        <p>Saindo de ${card.origem}</p>
-                        <p>${card.dataida.split('T')[0].split('-').reverse().join('/')}</p>
-                        <p>${card.datavolta.split('T')[0].split('-').reverse().join('/')}</p>
+// let html = ""
+// for (let i = 0; i < data.length; i++) {
+//     let card = data[i]
+//     html += `<div class="offer-card">
+//                     <img src="${card.img_url}" alt="destino">
+//                     <div class="offer-details">
+//                         <h3>${card.destino} </h3>
+//                         <p>Saindo de ${card.origem}</p>
+//                         <p>${card.dataida.split('T')[0].split('-').reverse().join('/')}</p>
+//                         <p>${card.datavolta.split('T')[0].split('-').reverse().join('/')}</p>
                         
-                        <h4>Passagens a partir de R$ ${card.valor.replace('.', ',')}</h4>
-                        <h2>em 6x sem juros</h2>
-                        <a href="pages/rio.html" class="btn">Detalhes</a>
-                    </div>
-                </div>`
-}
-container.innerHTML = html
+//                         <h4>Passagens a partir de R$ ${card.valor.replace('.', ',')}</h4>
+//                         <h2>em 6x sem juros</h2>
+//                         <a href="pages/rio.html" class="btn">Detalhes</a>
+//                     </div>
+//                 </div>`
+// }
+// container.innerHTML = html
 
         // let template = ``
 
 
 
-        //         container.innerHTML += template               
+        //         container.innerHTML += template 
+        
+        const url = "http://192.168.15.2:3030/cards";
+
+async function getCard() {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const container = document.querySelector("#offers-container");
+        container.innerHTML = data.map(card => createCardHTML(card)).join('');
+    } catch (error) {
+        console.error("Erro ao buscar os cards:", error);
+    }
+}
+
+function formatDate(dateStr) {
+    return dateStr.split('T')[0].split('-').reverse().join('/');
+}
+
+function createCardHTML(card) {
+    return `
+        <div class="offer-card">
+            <img src="${card.img_url}" alt="destino">
+            <div class="offer-details">
+                <h3>${card.destino}</h3>
+                <p>Saindo de ${card.origem}</p>
+                <p>${formatDate(card.dataida)}</p>
+                <p>${formatDate(card.datavolta)}</p>
+                <h4>Passagens a partir de R$ ${card.valor.replace('.', ',')}</h4>
+                <h2>em 6x sem juros</h2>
+                <a href="pages/rio.html" class="btn">Detalhes</a>
+            </div>
+        </div>
+    `;
+}
+
+getCard();
 
     
                 
@@ -118,11 +155,3 @@ container.innerHTML = html
 
 
 
-
-
-    }
-
-
-}
-
-    getCard();
