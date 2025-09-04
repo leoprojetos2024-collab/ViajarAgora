@@ -1,5 +1,5 @@
 // // Aguarda o DOM ser completamente carregado para executar o script
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
 //     // Seleciona os elementos do DOM com os quais vamos interagir
 //     const searchForm = document.getElementById('search-form');
@@ -59,25 +59,33 @@
 //         });
 //     }
 
-//     // Funcionalidade do Carrossel
-//     let currentSlide = 0;
-//     const slides = document.querySelectorAll('.carousel-item');
-//     const totalSlides = slides.length;
+    // Funcionalidade do Carrossel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const totalSlides = slides.length;
 
-//     function showSlide(index) {
-//         slides.forEach((slide, i) => {
-//             slide.style.transform = `translateX(${(i - index) * 100}%)`;
-//         });
-//     }
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.transform = `translateX(${(i - index) * 100}%)`;
+        });
+    }
 
-//     window.moveSlide = function(n) {
-//         currentSlide = (currentSlide + n + totalSlides) % totalSlides;
-//         showSlide(currentSlide);
-//     }
+    window.moveSlide = function(n) {
+        currentSlide = (currentSlide + n + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+    }
 
-//     // Exibe o primeiro slide inicialmente
-//     showSlide(currentSlide);
-// });
+    // Exibe o primeiro slide inicialmente
+    showSlide(currentSlide);
+
+    // Função para avançar automaticamente os slides
+    function autoSlide() {
+        moveSlide(1);
+    }
+
+    // Inicia o carrossel automático a cada 3 segundos (3000 milissegundos)
+    setInterval(autoSlide, 3000);
+});
 // const url = "http://192.168.15.2:3030/cards"
 // async function getCard() {
 //     let response = await fetch(url)

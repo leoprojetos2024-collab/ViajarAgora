@@ -5,3 +5,5 @@
 - atualizei as imagens
 -add Banco de dados
 # ViajarAgoraBACKEND
+-cards
+-imagens
