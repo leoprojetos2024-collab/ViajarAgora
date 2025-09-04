@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //         container.innerHTML += template 
         
-        const url = "http://192.168.15.2:3030/cards";
+        const url = "https://viajaragorabackend.onrender.com/cards";
 
 async function getCard() {
     try {
